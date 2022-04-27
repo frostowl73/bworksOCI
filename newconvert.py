@@ -18,7 +18,7 @@ def convert(oci_response):
 
 # configure the API, connect and authenticate to the server
 api = BroadworksAPI(
-    host = '10.122.51.167', port='2208', username='jester@vle.broadsoft.com', password='happy123',
+    host = 'xxx', port='2208', username='xxx@vle.broadsoft.com', password='xxx',
 )
 sysadmin = api.command("SystemAdminGetListRequest")
 #
