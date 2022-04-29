@@ -16,7 +16,7 @@ import os
 
 # configure the API, connect and authenticate to the server
 api = BroadworksAPI(
-    host = 'xxx', port='2208', username='xxx@vle.broadsoft.com', password='xxxx',
+    host = '10.122.51.167', port='2208', username='jester@vle.broadsoft.com', password='happy123',
 )
 
 # get the platform software level
@@ -25,10 +25,12 @@ print(f'My Version sucka: {response.version}')
 print('\n')
 
 sysadmin = api.command("SystemAdminGetListRequest")
-print(sysadmin.system_admin_table) 
+for admin in sysadmin.system_admin_table:
+    print(admin.administrator_id)
+#print(sysadmin.system_admin_table) 
 print('\n')
 
 sp_list = api.command("ServiceProviderGetListRequest")
-print(sp_list.service_provider_table)
-   
-
+for provider in sp_list.service_provider_table:
+        print(provider.service_provider_id)
+#print(sp_list.service_provider_table)
