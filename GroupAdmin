@@ -6,13 +6,13 @@ from broadworks_ocip import BroadworksAPI
 
 def setup():
     #config 
-    xsp = "10.122.51.167"
+    xsp = "x"
     port = 2208
     group_name = "Group1"  #use your own group name
     user = "jester" #use your own group admin account
-    provisioner_passwd = "happy123"
+    provisioner_passwd = "x123"
     enter_id = "labSP"
-    domain = "vle.broadsoft.com"
+    domain = "vle.xt.com"
     user_password = "happy123"
     provisioner = '@'.join([user, domain]) 
     params = {'service_provider_id': enter_id, 'group_id':group_name}
