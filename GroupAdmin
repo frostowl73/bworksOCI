@@ -6,13 +6,13 @@ from broadworks_ocip import BroadworksAPI
 
 def setup():
     #config 
-    xsp = "x"
+    xsp = "10.122.51.167"
     port = 2208
     group_name = "Group1"  #use your own group name
     user = "jester" #use your own group admin account
-    provisioner_passwd = "x123"
-    enter_id = "labSP"
-    domain = "vle.xt.com"
+    provisioner_passwd = "happy123"
+    enter_id = "LabEnt"
+    domain = "vle.broadsoft.com"
     user_password = "happy123"
     provisioner = '@'.join([user, domain]) 
     params = {'service_provider_id': enter_id, 'group_id':group_name}
@@ -23,7 +23,10 @@ def setup():
 
     #get next available DN in the group
     resp = OCI_Session.command("GroupAdminGetListRequest", **params)
-    print(resp.group_admin_table)
+    for admin in resp.group_admin_table:
+        print(f'My Group Admin: {admin.administrator_id}')
+    #print('\n')
+    #print(resp.group_admin_table)
    
     
 if __name__ == '__main__':
