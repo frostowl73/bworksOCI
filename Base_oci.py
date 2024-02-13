@@ -9,7 +9,7 @@ api = BroadworksAPI(
 response = api.command("SystemSoftwareVersionGetRequest")
 print(response.version)
 '''
-##Some line##
+
 ##############################
 from broadworks_ocip import BroadworksAPI
 import os
