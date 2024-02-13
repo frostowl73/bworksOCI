@@ -1,3 +1,6 @@
+''''A clunky attempt at different ways to parse data'''
+
+
 import sys
 from broadworks_ocip import BroadworksAPI
 import os
@@ -18,11 +21,9 @@ def convert(oci_response):
 
 # configure the API, connect and authenticate to the server
 api = BroadworksAPI(
-    host = 'xxx', port='2208', username='xxx@vle.broadsoft.com', password='xxx',
+    host = '10.122.51.167', port='2208', username='jester@vle.broadsoft.com', password='happy123',
 )
 sysadmin = api.command("SystemAdminGetListRequest")
-#
-# 
 # print(sysadmin.system_admin_table)
 ab = sysadmin.system_admin_table
 print(ab)

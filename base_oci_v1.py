@@ -9,7 +9,7 @@ api = BroadworksAPI(
 response = api.command("SystemSoftwareVersionGetRequest")
 print(response.version)
 '''
-##Some line##
+
 ##############################
 from broadworks_ocip import BroadworksAPI
 import os
@@ -24,13 +24,22 @@ response = api.command("SystemSoftwareVersionGetRequest")
 print(f'My Version sucka: {response.version}')
 print('\n')
 
+# get Sys Admins
 sysadmin = api.command("SystemAdminGetListRequest")
 for admin in sysadmin.system_admin_table:
-    print(admin.administrator_id, admin.first_name)
-#print(sysadmin.system_admin_table) 
+    print(admin.administrator_id)
+print(sysadmin.system_admin_table) 
 print('\n')
 
+# get the Service Providers
 sp_list = api.command("ServiceProviderGetListRequest")
 for provider in sp_list.service_provider_table:
         print(provider.service_provider_id)
 print(sp_list.service_provider_table)
+print('\n')
+
+# get Group Admins
+groupAdmin = api.command("GroupAdminGetListRequest", service_provider_id='labSP', group_id='Group1')
+for admin in groupAdmin.group_admin_table:
+    print(f'My Group Admin: {admin.administrator_id}')
+#print(groupAdmin.group_admin_table)
