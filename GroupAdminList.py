@@ -20,18 +20,17 @@ def setup():
         print(provider.service_provider_id)
     #print(sp_list.service_provider_table)
     
-        params = {'service_provider_id':provider.service_provider_id} 
-        for i in params:
-          print(provider.service_provider_id)
+    params = {'service_provider_id':provider.service_provider_id} 
+    for i in params:
+        print(provider.service_provider_id)
         
-    #group_list = api.command("GroupGetListInServiceProviderRequest", service_provider_id = str(provider.service_provider_id))
-    #group_list = api.command("GroupGetListInServiceProviderRequest", service_provider_id = 'labSP'
+    
     group_list = api.command("GroupGetListInServiceProviderRequest", **params)
     for group in group_list.group_table:
        print(f'SP_ID:{provider.service_provider_id} Group_ID:{group.group_id}')
     #print(group_list.group_table)
     
-       
+           
     '''#get Groups Admins
     grouplist = api.command("GroupGetListInServiceProviderRequest", **params) 
     for gadmin in grouplist.gadmin_table:
