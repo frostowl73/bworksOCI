@@ -39,7 +39,7 @@ print(sp_list.service_provider_table)
 print('\n')
 
 # get Group Admins
-groupAdmin = api.command("GroupAdminGetListRequest", service_provider_id='labSP', group_id='Group1')
+groupAdmin = api.command("GroupAdminGetListRequest", service_provider_id= sp_list, group_id='Group1')
 for admin in groupAdmin.group_admin_table:
     print(f'My Group Admin: {admin.administrator_id}')
 #print(groupAdmin.group_admin_table)
