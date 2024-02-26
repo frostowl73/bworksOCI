@@ -1,7 +1,7 @@
 from broadworks_ocip import BroadworksAPI
 import csv
 import os
-
+import subprocess
 
 def setup():
     #XSP config 
@@ -12,8 +12,10 @@ def setup():
     #XSP Login via broadworksAPI
     api = BroadworksAPI(host=xsp, port=port, username=provisioner, password = provisioner_passwd)
 
-
-    
+    #subprocess.call("Base_oci.py", shell=True) 
+    print('\n')
+    print(f'Service Providers & Groups')
+        
     #SP list     
     sp_list = api.command("ServiceProviderGetListRequest")
     for provider in sp_list.service_provider_table:
@@ -29,7 +31,8 @@ def setup():
             for group in group_list.group_table:
                 print(f'SP_ID: {provider.service_provider_id} - Group_ID: {group.group_id}')
             #print(group_list.group_table)
-    
+   
+
            
     '''#get Groups Admins
     grouplist = api.command("GroupGetListInServiceProviderRequest", **params) 
